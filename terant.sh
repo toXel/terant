@@ -5,13 +5,13 @@ SYSTEM="archlinux"
 TGZ_FILE=${PWD}/${SYSTEM}.tgz
 
 check_prefix() {
-    ## Check variable if it is set.
+    ## Check variable if it is not set.
     #if [ ! -v PREFIX ]; then
     #    export PREFIX=/data/data/com.termux/files/usr
     #    return
     #fi
 
-    # Check variable if it is not empty
+    # Check variable if it is empty
     if [ -z $PREFIX ]; then
         export PREFIX=/data/data/com.termux/files/usr
     fi

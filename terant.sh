@@ -1,5 +1,5 @@
 # script by urain39
-# github.com/urain39/terant.git
+# https://github.com/urain39/terant.git
 
 SYSTEM="archlinux"
 TGZ_FILE=${PWD}/${SYSTEM}.tgz
@@ -82,7 +82,7 @@ generate_init_sh() {
     echo '#!/usr/bin/bash'               >  ${RUN_PATH}/init.sh
     echo 'unset LD_LIBRARY_PATH'         >> ${RUN_PATH}/init.sh
     echo 'unset PREFIX'                  >> ${RUN_PATH}/init.sh
-    echo ''                              >> ${RUN_PATH}/init.sh
+    echo 'unset LD_PRELOAD'              >> ${RUN_PATH}/init.sh
     echo 'export TERM="xterm"'           >> ${RUN_PATH}/init.sh
     echo 'export HOME="/root"'           >> ${RUN_PATH}/init.sh
     echo '. /etc/profile'                >> ${RUN_PATH}/init.sh

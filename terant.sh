@@ -103,6 +103,16 @@ generate_init_sh() {
     chmod 0755 ${PREFIX}/bin/terant
 }
 
+replace_resolv() {
+    if [ ! -e $RUN_PATH/etc/resolv.conf ]; then
+        rm $RUN_PATH/etc/resolv.conf
+        echo "nameserver 8.8.8.8" >  ${RUN_PATH}/etc/resolv.conf
+        echo "nameserver 8.8.4.4" >> ${RUN_PATH}/etc/resolv.conf
+    fi
+
+    chmod 644 $RUN_PATH/etc/resolv.conf
+}
+
 main() {
 
     check_prefix
@@ -121,6 +131,8 @@ main() {
 
     check_runpath
     generate_init_sh
+    
+    replace_resolv
 }
 
 main

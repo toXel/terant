@@ -14,7 +14,7 @@ $ git clone https://github.com/urain39/terant
 ````sh
 $ cd terant
 ````
-3. 运行脚本
+3. 安装（解包）
 ````sh
 $ bash terant.sh # 本人只保证bash能执行。
 ````

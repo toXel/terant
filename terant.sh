@@ -123,5 +123,8 @@ main() {
 
 main
 
+echo "感谢使用，如果可以的话欢迎加入termux社(QQ群494453985)" && sleep 3
+xdg-open "mqqopensdkapi://bizAgent/qm/qr?url=http%3A%2F%2Fqm.qq.com%2Fcgi-bin%2Fqm%2Fqr%3Fk%3DM7DiaZsJmkVhvD9B321HAbCqoOiYV80-%26auth%3Dbd8d786d79fc1cff9a063cfe2bd19a791ceb3c7af44e2e4d988efc5e851ba0488db142e55f6d4041"
+
 # vim: set ts=4 sw=4 et:
 

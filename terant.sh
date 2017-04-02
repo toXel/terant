@@ -46,11 +46,11 @@ download_tgzfile() {
         aarch64)
             # 64 bit
             down_url="http://mirrors.ustc.edu.cn/archlinuxarm/os/ArchLinuxARM-aarch64-latest.tar.gz"
-        ;;
+            ;;
         *)
             # 32 bit
             down_url="http://mirrors.ustc.edu.cn/archlinuxarm/os/ArchLinuxARM-armv5-latest.tar.gz"
-        ;;
+            ;;
         esac
 
         if [ ! -e ${TGZ_FILE} ]; then
@@ -72,7 +72,7 @@ check_runpath() {
 }
 
 
-# Keep simple and stupid
+# Keep it simple and stupid
 generate_init_sh() {
     if [ ! -e ${RUN_PATH}/root/.bashrc ]; then
         echo 'export PS1="[\u@arch \W]"'       >  ${RUN_PATH}/root/.bashrc

@@ -116,9 +116,11 @@ main() {
 
     local RUN_PATH=${PREFIX}/share/terant
 
-    check_depends && download_tgzfile
+    check_depends
+    download_tgzfile
 
-    check_runpath && generate_init_sh
+    check_runpath
+    generate_init_sh
 }
 
 main

@@ -76,8 +76,8 @@ check_runpath() {
 generate_init_sh() {
     if [ ! -e ${RUN_PATH}/root/.bashrc ]; then
         echo 'export PS1="[\u@arch \W]"'       >  ${RUN_PATH}/root/.bashrc
-        echo 'export ls="ls --color=auto"'     >> ${RUN_PATH}/root/.bashrc
-        echo 'export grep="grep --color=auto"' >> ${RUN_PATH}/root/.bashrc
+        echo 'alias ls="ls --color=auto"'     >> ${RUN_PATH}/root/.bashrc
+        echo 'alias grep="grep --color=auto"' >> ${RUN_PATH}/root/.bashrc
     fi
 
     echo '#!/usr/bin/bash'               >  ${RUN_PATH}/init.sh

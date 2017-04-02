@@ -63,8 +63,7 @@ check_runpath() {
     tar=${depends[0]}
 
     if [ ! -e ${RUN_PATH} ]; then
-        mkdir ${RUN_PATH} || \
-            echo "ERROR: error in install_terant()" && exit 1
+        mkdir ${RUN_PATH}
     fi
     
     cd ${RUN_PATH}

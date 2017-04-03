@@ -1,0 +1,14 @@
+# This is pre module
+
+echo "Module by urain39"
+
+SYSTEM="archlinux-arm"
+TGZ_FILE=${PWD}/${SYSTEM}.tgz
+
+# 64 bit
+DOWN_URL64="http://mirrors.ustc.edu.cn/archlinuxarm/os/ArchLinuxARM-aarch64-latest.tar.gz"
+
+# 32 bit
+DOWN_URL32="http://mirrors.ustc.edu.cn/archlinuxarm/os/ArchLinuxARM-armv5-latest.tar.gz"
+
+echo ${TGZ_FILE}

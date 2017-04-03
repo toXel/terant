@@ -37,7 +37,7 @@ echo "Module by urain39"
 # 系统名称
 SYSTEM="archlinux-arm"
 
-# 保存文件名字
+# 保存文件名字(建议不改)
 TGZ_FILE=${PWD}/${SYSTEM}.tgz
 
 # 64位下载地址

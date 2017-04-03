@@ -2,7 +2,8 @@
 # https://github.com/urain39/terant.git
 
 SYSTEM="archlinux"
-TGZ_FILE=${PWD}/${SYSTEM}.tgz
+DOWN_PATH=${PWD}
+TGZ_FILE=${DOWN_PATH}/${SYSTEM}.tgz
 
 check_prefix() {
     ## Check variable if it is not set.
@@ -113,12 +114,16 @@ replace_resolv() {
 }
 
 pre_module_load() {
+    cd ${DOWN_PATH}
+
     for module in $PWD/*-pre.module; do
         source ${module};
     done
 }
 
 post_module_load() {
+    cd ${DOWN_PATH}
+
     for module in $PWD/*-post.module; do
         source ${module};
     done   
@@ -135,7 +140,6 @@ main() {
         "$PREFIX/bin/wget"
         "$PREFIX/bin/proot"
     )
-
     local RUN_PATH=${PREFIX}/share/terant
 
     check_depends

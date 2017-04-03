@@ -145,7 +145,7 @@ main() {
     generate_init_sh
     
     replace_resolv
-    pre_module_load
+    post_module_load
 }
 
 main

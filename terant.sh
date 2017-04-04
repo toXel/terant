@@ -80,7 +80,7 @@ generate_init_sh() {
         echo 'alias grep="grep --color=auto"' >> ${RUN_PATH}/root/.bashrc
     fi
 
-    echo '#!/bin/sh'               >  ${RUN_PATH}/init.sh
+    echo '#!/bin/sh'                     >  ${RUN_PATH}/init.sh
     echo 'unset LD_LIBRARY_PATH'         >> ${RUN_PATH}/init.sh
     echo 'unset PREFIX'                  >> ${RUN_PATH}/init.sh
     echo 'unset LD_PRELOAD'              >> ${RUN_PATH}/init.sh

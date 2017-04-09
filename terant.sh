@@ -104,7 +104,7 @@ generate_init_sh() {
 
 replace_resolv() {
     if [ ! -e $RUN_PATH/etc/resolv.conf ]; then
-        rm $RUN_PATH/etc/resolv.conf
+        rm -rf $RUN_PATH/etc/resolv.conf # Links ?
         echo "nameserver 8.8.8.8" >  ${RUN_PATH}/etc/resolv.conf
         echo "nameserver 8.8.4.4" >> ${RUN_PATH}/etc/resolv.conf
     fi

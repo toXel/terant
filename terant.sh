@@ -91,6 +91,7 @@ generate_init_sh() {
     echo "mount /dev  ${RUN_PATH}/dev"    >  ${PREFIX}/bin/terant
     echo "mount /proc ${RUN_PATH}/proc"   >> ${PREFIX}/bin/terant
     echo "mount /sys  ${RUN_PATH}/sys"    >> ${PREFIX}/bin/terant
+    echo "mount -t tmpfs tmpfs /tmp"      >> ${PREFIX}/bin/terant
     echo 'unset LD_LIBRARY_PATH'          >> ${PREFIX}/bin/terant
     echo 'unset PREFIX'                   >> ${PREFIX}/bin/terant
     echo 'unset LD_PRELOAD'               >> ${PREFIX}/bin/terant

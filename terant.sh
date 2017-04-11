@@ -88,6 +88,7 @@ generate_init_sh() {
     echo 'bash'                          >> ${RUN_PATH}/init.sh
     echo 'rm -rf /tmp/*'                 >> ${RUN_PATH}/init.sh
 
+    mkdir ${RUN_PATH}/sdcard
     echo "mount /dev  ${RUN_PATH}/dev"               >  ${PREFIX}/bin/terant
     echo "mount /dev/pts ${RUN_PATH}/dev/pts"        >> ${PREFIX}/bin/terant
     echo "mount /proc ${RUN_PATH}/proc"              >> ${PREFIX}/bin/terant

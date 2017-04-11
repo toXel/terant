@@ -74,15 +74,12 @@ check_runpath() {
 # Keep it simple and stupid
 generate_init_sh() {
     if [ ! -e ${RUN_PATH}/root/.bashrc ]; then
-        echo 'export PS1="[\u@arch \W]"'       >  ${RUN_PATH}/root/.bashrc
+        echo 'export PS1="[\u@arch \W]"'      >  ${RUN_PATH}/root/.bashrc
         echo 'alias ls="ls --color=auto"'     >> ${RUN_PATH}/root/.bashrc
         echo 'alias grep="grep --color=auto"' >> ${RUN_PATH}/root/.bashrc
     fi
 
     echo '#!/usr/bin/bash'               >  ${RUN_PATH}/init.sh
-    echo 'unset LD_LIBRARY_PATH'         >> ${RUN_PATH}/init.sh
-    echo 'unset PREFIX'                  >> ${RUN_PATH}/init.sh
-    echo 'unset LD_PRELOAD'              >> ${RUN_PATH}/init.sh
     echo 'export TERM="xterm"'           >> ${RUN_PATH}/init.sh
     echo 'export HOME="/root"'           >> ${RUN_PATH}/init.sh
     echo '. /etc/profile'                >> ${RUN_PATH}/init.sh
@@ -91,12 +88,16 @@ generate_init_sh() {
     echo 'bash'                          >> ${RUN_PATH}/init.sh
     echo 'rm -rf /tmp/*'                 >> ${RUN_PATH}/init.sh
 
-    echo '# No Shebang!!!'               >  ${PREFIX}/bin/terant
-    echo "proot -r ${RUN_PATH} \\"       >> ${PREFIX}/bin/terant
-    echo ' -b /dev -b /proc \'           >> ${PREFIX}/bin/terant
-    echo ' -b /sdcard -b /sys \'         >> ${PREFIX}/bin/terant
-    echo ' -w /root -0 --link2symlink \' >> ${PREFIX}/bin/terant
-    echo ' /init.sh'                     >> ${PREFIX}/bin/terant 
+    echo "mount /dev  ${RUN_PATH}/dev"    >  ${PREFIX}/bin/terant
+    echo "mount /proc ${RUN_PATH}/proc"   >> ${PREFIX}/bin/terant
+    echo "mount /sys  ${RUN_PATH}/sys"    >> ${PREFIX}/bin/terant
+    echo 'unset LD_LIBRARY_PATH'          >> ${PREFIX}/bin/terant
+    echo 'unset PREFIX'                   >> ${PREFIX}/bin/terant
+    echo 'unset LD_PRELOAD'               >> ${PREFIX}/bin/terant
+    echo "chroot ${RUN_PATH} /init.sh"    >> ${PREFIX}/bin/terant
+    echo "umount ${RUN_PATH}/dev"         >> ${PREFIX}/bin/terant
+    echo "umount ${RUN_PATH}/proc"        >> ${PREFIX}/bin/terant
+    echo "umount ${RUN_PATH}/sys"         >> ${PREFIX}/bin/terant
 
     chmod 0755 ${RUN_PATH}/init.sh
     chmod 0755 ${PREFIX}/bin/terant

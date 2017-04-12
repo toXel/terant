@@ -99,8 +99,8 @@ generate_init_sh() {
     echo 'unset PREFIX'                              >> ${PREFIX}/bin/terant
     echo 'unset LD_PRELOAD'                          >> ${PREFIX}/bin/terant
     echo "chroot ${RUN_PATH} /init.sh"               >> ${PREFIX}/bin/terant
-    echo "umount ${RUN_PATH}/dev"                    >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/dev/pts"                >> ${PREFIX}/bin/terant 
+    echo "umount ${RUN_PATH}/dev"                    >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/proc"                   >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/sdcard"                 >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/sys"                    >> ${PREFIX}/bin/terant

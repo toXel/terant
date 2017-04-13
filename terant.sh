@@ -104,6 +104,7 @@ generate_init_sh() {
     echo "umount ${RUN_PATH}/proc"                   >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/sdcard"                 >> ${PREFIX}/bin/terant
     echo "umount ${RUN_PATH}/sys"                    >> ${PREFIX}/bin/terant
+    echo "umount ${RUN_PATH}/tmp"                    >> ${PREFIX}/bin/terant 
 
     chmod 0755 ${RUN_PATH}/init.sh
     chmod 0755 ${PREFIX}/bin/terant

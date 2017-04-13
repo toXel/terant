@@ -7,7 +7,7 @@
 
 1. 同步脚本
 ````sh
-$ git clone https://github.com/urain39/terant
+$ git clone https://github.com/urain39/terant -b root
 ````
 
 2. 进入目录

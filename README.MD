@@ -14,13 +14,17 @@ $ git clone https://github.com/urain39/terant
 ````sh
 $ cd terant
 ````
-3. 安装（解包）
+3. 切换到root
 ````sh
-$ bash terant.sh # 本人只保证bash能执行。
+$ tsu -p #注意加上p参数
 ````
-4. 启动系统
+4. 安装（以root执行）
 ````sh
-$ terant
+# bash terant.sh # 本人只保证bash能执行。
+````
+5. 启动系统（以root执行）
+````sh
+# terant
 ````
 ----------------------------------------------
 
@@ -29,3 +33,5 @@ $ terant
     1. 可能需要执行两次脚本才能生效
     
     2. 卸载请运行uninst.sh脚本
+    
+    3. root版本需要使用tsu -p手动进入roo后才能使用
